@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Химические ребусы</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ГЛАВНОЕ МЕНЮ
+         ========================= -->
+
+    <div class="container" id="menu">
+
+        <div class="flask">⚗️</div>
+
+        <h1>Химические ребусы</h1>
+
+        <p class="subtitle">
+            Проверь свои знания химии<br>
+            и разгадай все ребусы!
+        </p>
+
+        <button onclick="startGame()">
+            🧪 Начать игру
+        </button>
+
+        <button class="secondary" onclick="showRules()">
+            📖 Как играть?
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         ИГРА
+         ========================= -->
+
+    <div class="container game-container" id="game">
+
+        <div class="game-top">
+
+            <span id="questionNumber">
+                Ребус 1 / 5
+            </span>
+
+            <span id="score">
+                ⭐ 0
+            </span>
+
+        </div>
+
+
+        <h2>🧩 Разгадай ребус</h2>
+
+
+        <!-- КАРТИНКА ВОПРОСА -->
+
+        <div class="question-image-container" id="questionImageContainer">
+
+            <img
+                id="questionImage"
+                src=""
+                alt="Картинка к ребусу"
+            >
+
+        </div>
+
+
+        <!-- САМ РЕБУС -->
+
+        <div class="riddle" id="riddle"></div>
+
+
+        <!-- ПОДСКАЗКА -->
+
+        <p class="hint" id="hint">
+            Подумай...
+        </p>
+
+
+        <!-- ПОЛЕ ОТВЕТА -->
+
+        <input
+            type="text"
+            id="answer"
+            placeholder="Напиши ответ..."
+            autocomplete="off"
+        >
+
+
+        <!-- ПРОВЕРКА -->
+
+        <button onclick="checkAnswer()" id="checkButton">
+            ✅ Проверить
+        </button>
+
+
+        <!-- РЕЗУЛЬТАТ -->
+
+        <div id="result"></div>
+
+
+        <!-- СЛЕДУЮЩИЙ ВОПРОС -->
+
+        <button
+            class="next-button"
+            onclick="nextQuestion()"
+            id="nextButton"
+        >
+            Следующий вопрос →
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         ЭКРАН РЕЗУЛЬТАТА
+         ========================= -->
+
+    <div class="container" id="finish">
+
+        <div class="finish-icon">
+            🏆
+        </div>
+
+        <h1>Игра окончена!</h1>
+
+        <p class="final-score" id="finalScore">
+            Ты набрал 0 очков!
+        </p>
+
+        <button onclick="startGame()">
+            🔄 Играть ещё раз
+        </button>
+
+        <button class="secondary" onclick="backToMenu()">
+            🏠 В главное меню
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         ОКНО "КАК ИГРАТЬ"
+         ========================= -->
+
+    <div class="rules-overlay" id="rules">
+
+        <div class="rules-window">
+
+            <button class="close-button" onclick="closeRules()">
+                ✕
+            </button>
+
+            <div class="rules-icon">
+                🧪
+            </div>
+
+            <h2>Как играть?</h2>
+
+            <p>
+                🧩 На экране появится химический ребус.
+            </p>
+
+            
+            </p>
+
+            <p>
+                ✏️ Напиши свой ответ в поле и нажми
+                <strong>«Проверить»</strong>.
+            </p>
+
+            <p>
+                ⭐ За правильный ответ ты получишь
+                <strong>10 очков</strong>.
+            </p>
+
+            <p>
+                ➡️ После проверки нажми
+                <strong>«Следующий вопрос»</strong>.
+            </p>
+
+            <button onclick="closeRules()">
+                Понятно! 🧪
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
